@@ -15,9 +15,11 @@ spec:
         app: quarkus-demo
     spec:
       containers:
-        - image: quay.io/tshen/quarkus-demo:latest
+        - image: quay.io/tshen/quarkus-demo
           imagePullPolicy: Always
           name: quarkus-demo
           ports:
             - containerPort: 8080
               protocol: TCP
+      imagePullSecrets:
+        - name: tshen-quay-robot-secret
