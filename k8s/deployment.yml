@@ -2,24 +2,26 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: quarkus-demo
-  name: quarkus-demo
+    app: dview-webui 
+  name: dview-webui
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: quarkus-demo
+      app: dview-webui
   template:
     metadata:
       labels:
-        app: quarkus-demo
+        app: dview-webui 
     spec:
       containers:
-        - image: quay.io/tshen/quarkus-demo
+        - image: quay.io/dviewquay/dvmobile
           imagePullPolicy: Always
-          name: quarkus-demo
+          name: dview-webui
           ports:
-            - containerPort: 8080
+            - containerPort: 9080
+              protocol: TCP
+            - containerPort: 9443
               protocol: TCP
       imagePullSecrets:
-        - name: tshen-quay-robot-secret
+        - name: quay-pull-secret
