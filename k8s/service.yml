@@ -2,18 +2,14 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: dview-webui
-  name: dview-webui-service
+    app: quarkus-demo
+  name: quarkus-service
 spec:
   type: NodePort
   ports:
-    - name: 9443-tcp
-      port: 9443
-      targetPort: 9443
-      protocol: TCP
-    - name: 9080-tcp
-      port: 9080
-      targetPort: 9080
+    - name: 8080-tcp
+      port: 8080
+      targetPort: 8080
       protocol: TCP
   selector:
-    app: dview-webui
+    app: quarkus-demo
