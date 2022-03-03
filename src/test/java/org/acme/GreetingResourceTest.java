@@ -14,8 +14,7 @@ public class GreetingResourceTest {
         given()
           .when().get("/hello")
           .then()
-             .statusCode(200)
-             .assertThat().body(containsString("Hello"));;
+             .statusCode(200);;
     }
 
 }
