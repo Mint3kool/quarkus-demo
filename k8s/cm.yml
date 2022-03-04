@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: quarkus-config 
 data:
-  greeting.message: "Hello from Openshift!" 
+  message: "Hello from Openshift!" 

@@ -22,10 +22,10 @@ spec:
             - containerPort: 8080
               protocol: TCP
           env:
-          - name: HELLO-VAR
+          - name: GREETING_MESSAGE
             valueFrom:
               configMapKeyRef:
                 name: quarkus-config
-                key: greeting.message
+                key: message
       imagePullSecrets:
         - name: tshen-quay-robot-secret
